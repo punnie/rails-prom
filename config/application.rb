@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module RailsProm
   class Application < Rails::Application
+
+    # Make this application API only
+    config.api_only = true
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
