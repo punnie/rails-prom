@@ -9,7 +9,7 @@ class DicerollsController < ApplicationController
   # POST /dicerolls
   # POST /dicerolls.json
   def create
-    @diceroll = Diceroll.new(parameters: diceroll_params)
+    @diceroll = Diceroll.new(parameters: dice_spec)
 
     if @diceroll.save
       render :show, status: :created, location: @diceroll
@@ -26,7 +26,7 @@ class DicerollsController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def diceroll_params
+  def dice_spec
     params.require(:spec)
   end
 end
