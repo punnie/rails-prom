@@ -17,6 +17,15 @@ services:
     depends_on:
       - prom
 
+  exporter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - "prometheus_exporter"
+    ports:
+      - "9394:9394"
+
   rails:
     build:
       context: .
@@ -28,6 +37,9 @@ services:
       - "0.0.0.0"
     ports:
       - "3000:3000"
+    depends_on:
+      - exporter
+
   generator:
     build:
       context: ./contrib/generator
