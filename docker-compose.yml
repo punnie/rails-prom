@@ -28,3 +28,16 @@ services:
       - "0.0.0.0"
     ports:
       - "3000:3000"
+  generator:
+    build:
+      context: ./contrib/generator
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app/contrib/generator
+    command:
+      - bash
+      - generator.sh
+    depends_on:
+      - rails
+
