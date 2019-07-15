@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "#{Rails.root}/lib/prometheus"
+
 class Cointoss < ApplicationRecord
   # Avoid in real life
   before_save :set_result
@@ -11,7 +13,11 @@ class Cointoss < ApplicationRecord
   def set_result
     self.result = parameters.to_i.times.map { |_|
       sleep 0.5
-      %w[heads tails].sample
+      result = %w[heads tails].sample
+
+      Prometheus.counters["cointosses_#{result}"].observe(1)
+
+      result
     }.join(', ')
   end
 
