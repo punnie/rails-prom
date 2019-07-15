@@ -12,6 +12,8 @@ services:
 
   grafana:
     image: grafana/grafana
+    volumes:
+      - grafana-storage:/var/lib/grafana
     ports:
       - "5000:3000"
     depends_on:
@@ -53,3 +55,5 @@ services:
     depends_on:
       - rails
 
+volumes:
+  grafana-storage:
