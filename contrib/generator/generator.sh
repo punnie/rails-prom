@@ -4,7 +4,6 @@ set -x
 
 while true; do
     COINTOSSES=$((RANDOM % 10))
-    COINTOSSES=0
 
     for i in $(seq 0 $COINTOSSES); do
         SLEEP=$((1 + RANDOM % 2))
