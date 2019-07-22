@@ -33,11 +33,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command:
-      - "rails"
-      - "server"
-      - "-b"
-      - "0.0.0.0"
+    volumes:
+      - .:/usr/src/app
+    command: 'bash -c "(rm tmp/pids/server.pid || true); rake db:migrate; rails server -b 0.0.0.0 -p 3000"'
     ports:
       - "3000:3000"
     depends_on:
