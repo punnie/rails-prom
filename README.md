@@ -20,6 +20,14 @@ To run the example type this in your terminal, in the directory of this project:
 docker-compose up -d
 ```
 
+If you want to generate more traffic to your application (i.e. more users), increase the number of generators as so:
+
+```bash
+docker-compose up -d --scale generator=10
+```
+
+You may run this at any time.
+
 To shut down all components type:
 
 ```bash
