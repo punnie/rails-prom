@@ -6,6 +6,7 @@ services:
     image: prom/prometheus
     volumes:
       - ./monitor/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus:/prometheus
     command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
     ports:
       - "9090:9090"
@@ -13,7 +14,7 @@ services:
   grafana:
     image: grafana/grafana
     volumes:
-      - grafana-storage:/var/lib/grafana
+      - ./data/grafana:/var/lib/grafana
     ports:
       - "5000:3000"
     depends_on:
@@ -54,6 +55,3 @@ services:
       - generator.sh
     depends_on:
       - rails
-
-volumes:
-  grafana-storage:
