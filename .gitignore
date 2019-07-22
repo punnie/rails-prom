@@ -32,3 +32,8 @@
 
 # Ignore local vendoring
 /vendor/bundle
+
+# Ignore data from prometheus and grafana
+data/grafana/sessions
+data/prometheus/lock
+data/prometheus/wal
