@@ -2,7 +2,7 @@
 
 Hi there! This is the application used in the talk [Instrumenting a Rails application](https://ethereal.io/2019-07-22/instrumenting-a-rails-application/).
 
-Feel more than welcome to clone this repository and experiemnt with it as you please.
+Feel more than welcome to clone this repository and experiment with it as you please.
 
 ## Prerequisites 
 
