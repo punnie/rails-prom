@@ -13,7 +13,7 @@ class Diceroll < ApplicationRecord
   def set_result
     num, roll = parameters.split(/[dD]/)
 
-    self.result = num.to_i.times.map { |_|
+    self.result = num.to_i.times.map { |_t|
       Prometheus.counters['dicerolls'].observe(1, roll: roll)
 
       1 + Random.rand(roll.to_i)

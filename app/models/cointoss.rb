@@ -11,8 +11,7 @@ class Cointoss < ApplicationRecord
             format: { with: /\d+/, message: 'must be a number' }
 
   def set_result
-    self.result = parameters.to_i.times.map { |_|
-      sleep 0.5
+    self.result = parameters.to_i.times.map { |_t|
       result = %w[heads tails].sample
 
       Prometheus.counters["cointosses_#{result}"].observe(1)
