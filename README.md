@@ -4,6 +4,8 @@ Hi there! This is the application used in the talk [Instrumenting a Rails applic
 
 Feel more than welcome to clone this repository and experiment with it as you please.
 
+If you encounter any problems please create a new issue in this repository.
+
 ## Prerequisites 
 
 To run and explore this example it is recommended you do it using docker-compose, and for that you'll need a recent version of docker and docker-compose installed in your computer. Here are the installation guides for [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
